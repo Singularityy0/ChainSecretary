@@ -1,10 +1,3 @@
-declare const __dirname: string;
-declare const process: { env: { SHELL?: string } };
-declare const require: (moduleName: string) => any;
-declare const describe: any;
-declare const expect: any;
-declare const test: any;
-
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
