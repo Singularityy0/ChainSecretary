@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "proposal_id": "prop-quorum-fail",
+  "network": "mainnet",
+  "totals": {
+    "snapshot_power": 200,
+    "participating_power": 100,
+    "yes_power": 100,
+    "no_power": 0
+  },
+  "quorum_reached": false,
+  "passed": false,
+  "counted_votes": 1,
+  "rejected_votes": [],
+  "warnings": [
+    {
+      "code": "LOW_PARTICIPATION"
+    }
+  ]
+}

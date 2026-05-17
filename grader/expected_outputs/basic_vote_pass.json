@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "proposal_id": "prop-basic-pass",
+  "network": "mainnet",
+  "totals": {
+    "snapshot_power": 200,
+    "participating_power": 200,
+    "yes_power": 160,
+    "no_power": 40
+  },
+  "quorum_reached": true,
+  "passed": true,
+  "counted_votes": 3,
+  "rejected_votes": [],
+  "warnings": []
+}

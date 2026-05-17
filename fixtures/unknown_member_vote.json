@@ -1,0 +1,41 @@
+{
+  "network": "mainnet",
+  "proposal": {
+    "proposal_id": "prop-unknown-member",
+    "title": "Unknown Member Rejection",
+    "start_ts": 1760000000,
+    "end_ts": 1760086400
+  },
+  "members": [
+    {
+      "address": "bc1qvn4cw9rtchdl69h286kglcr72r2ufdy24lg2fp",
+      "voting_power": 100
+    },
+    {
+      "address": "bc1qqh0hp08hh4uf9u55wzfks5zr3zp9raqxwyufjt",
+      "voting_power": 100
+    }
+  ],
+  "votes": [
+    {
+      "address": "bc1q30ds9ptqlxslhdtp07xa522c3wulz5fe422sfk",
+      "choice": "yes",
+      "nonce": 1,
+      "timestamp": 1760000100,
+      "message": "proposal:prop-unknown-member|choice:yes|nonce:1",
+      "signature": "smpAkgwRQIhAJnwM2A6EJ/Ea9S7pd0xTdBQhSQMX728NFkEXBcGvnaPAiAmVtOhO1n1QYwGNoQaqA8adI1zZS2CaZsPpJw+u2kmBgEhA9dnb2nqiRbGjVkym52661uEHQ/iGvIGJ367WHBaL7sE"
+    },
+    {
+      "address": "bc1qvn4cw9rtchdl69h286kglcr72r2ufdy24lg2fp",
+      "choice": "yes",
+      "nonce": 1,
+      "timestamp": 1760000200,
+      "message": "proposal:prop-unknown-member|choice:yes|nonce:1",
+      "signature": "smpAkcwRAIgaxaAJgL/MHJkfLOGmHU2PLhOeP8L7y/o/M9MreKjGToCIA4iwc4eMWyzoFYg9doCWIEq7RgBLw49tL/OmpjyAguiASEDYRQIIOS48jPf2OjPMFjOAL6pRT7pMHAXjCpa0JUQ3NU="
+    }
+  ],
+  "policy": {
+    "quorum_bps": 5000,
+    "pass_threshold_bps": 5001
+  }
+}

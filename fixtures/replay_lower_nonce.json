@@ -1,0 +1,49 @@
+{
+  "network": "mainnet",
+  "proposal": {
+    "proposal_id": "prop-replay-low",
+    "title": "Replay Lower Nonce",
+    "start_ts": 1760000000,
+    "end_ts": 1760086400
+  },
+  "members": [
+    {
+      "address": "bc1qfzhdh4q57npmhle2py53yhfwdeyy9gxv8q08q8",
+      "voting_power": 100
+    },
+    {
+      "address": "bc1qper2vkv6y60uruvdryh7nytl7jp06c6t0xmhtx",
+      "voting_power": 100
+    }
+  ],
+  "votes": [
+    {
+      "address": "bc1qfzhdh4q57npmhle2py53yhfwdeyy9gxv8q08q8",
+      "choice": "yes",
+      "nonce": 2,
+      "timestamp": 1760000100,
+      "message": "proposal:prop-replay-low|choice:yes|nonce:2",
+      "signature": "smpAkcwRAIgWLZhWN8ot3F4SoOHr5rodE6kJSN36UrxPh3YXcfC2sYCICNDp1aWDscfbJGUgFjAdQEBVvB5DhYB3w8keuhr/MC+ASEDA8PUrB/gWkRoUEHtzJpHSipvPFNzuhJmDlgM/oDrohM="
+    },
+    {
+      "address": "bc1qfzhdh4q57npmhle2py53yhfwdeyy9gxv8q08q8",
+      "choice": "no",
+      "nonce": 1,
+      "timestamp": 1760000200,
+      "message": "proposal:prop-replay-low|choice:no|nonce:1",
+      "signature": "smpAkgwRQIhAKSBqD8YNDs3vhXSfQAQgmGATnLg4eNGwNoWfzjS3gxsAiAkYpR7DyaP3DM5Vo6KTokX4GL2Y6vX+vlTN6zaWfLqogEhAwPD1Kwf4FpEaFBB7cyaR0oqbzxTc7oSZg5YDP6A66IT"
+    },
+    {
+      "address": "bc1qper2vkv6y60uruvdryh7nytl7jp06c6t0xmhtx",
+      "choice": "yes",
+      "nonce": 1,
+      "timestamp": 1760000300,
+      "message": "proposal:prop-replay-low|choice:yes|nonce:1",
+      "signature": "smpAkcwRAIgEGDZmbALyw2681tm0p3znZPv5ER7CQE8rGdwG7Y4tQYCIEZ6R6mtib6aHC1g2NcgkJ6gFqerlTFJN+4/oxr7gjzRASECHET4IKgfyn9bk/VQkYIRj0XhFQAwCNaLShrImUrJLuE="
+    }
+  ],
+  "policy": {
+    "quorum_bps": 5000,
+    "pass_threshold_bps": 5001
+  }
+}

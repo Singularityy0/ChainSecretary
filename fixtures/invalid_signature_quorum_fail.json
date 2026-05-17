@@ -1,0 +1,49 @@
+{
+  "network": "mainnet",
+  "proposal": {
+    "proposal_id": "prop-invalid-sig",
+    "title": "Invalid Signature and Quorum Fail",
+    "start_ts": 1760000000,
+    "end_ts": 1760086400
+  },
+  "members": [
+    {
+      "address": "bc1qcwnyytaa7el0mu2qz27mnxef4lzp4uguh677uy",
+      "voting_power": 250
+    },
+    {
+      "address": "bc1qk44xym79cqc8t48lt75nnqtnn63thfnm0vpwkj",
+      "voting_power": 250
+    },
+    {
+      "address": "bc1qprxt52t3q9cs4vle29l07twtz6686n69rygdl2",
+      "voting_power": 250
+    },
+    {
+      "address": "bc1qck8vm0t08ynghcafj4hmdlcj593hnuw09dfxwe",
+      "voting_power": 250
+    }
+  ],
+  "votes": [
+    {
+      "address": "bc1qcwnyytaa7el0mu2qz27mnxef4lzp4uguh677uy",
+      "choice": "yes",
+      "nonce": 1,
+      "timestamp": 1760000100,
+      "message": "proposal:prop-invalid-sig|choice:yes|nonce:1",
+      "signature": "smpAkgwRQIhAND92HZ4mlFxE9Ve6uuDxhDj3wBLMGcmAWsuq+VfP3uDAiBjJ3ThKjUA49YLlNUAdt3WG9GLB2c5PITt3LB5Mw3KRAEhApjyz+mOoBJjiikONRRrVLh5e51zxaaIS4G76knI9YAB"
+    },
+    {
+      "address": "bc1qk44xym79cqc8t48lt75nnqtnn63thfnm0vpwkj",
+      "choice": "yes",
+      "nonce": 1,
+      "timestamp": 1760000200,
+      "message": "proposal:prop-invalid-sig|choice:yes|nonce:1",
+      "signature": "invalid_sig_isb"
+    }
+  ],
+  "policy": {
+    "quorum_bps": 3000,
+    "pass_threshold_bps": 5001
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "network": "mainnet",
+  "proposal": {
+    "proposal_id": "prop-boundary-ts",
+    "title": "Boundary Timestamp Voting",
+    "start_ts": 1760000000,
+    "end_ts": 1760086400
+  },
+  "members": [
+    {
+      "address": "bc1qpjl7nxh975437lc0gex2wuxzw2k3nactvelnk7",
+      "voting_power": 100
+    },
+    {
+      "address": "bc1qkxcttfatezn8lxk74yv38pzvqnjenslma4pwjy",
+      "voting_power": 100
+    },
+    {
+      "address": "bc1q2f3zrc9ltx8s87rhck7d56qvlxzms8sge5mlc0",
+      "voting_power": 100
+    }
+  ],
+  "votes": [
+    {
+      "address": "bc1qpjl7nxh975437lc0gex2wuxzw2k3nactvelnk7",
+      "choice": "yes",
+      "nonce": 1,
+      "timestamp": 1760000000,
+      "message": "proposal:prop-boundary-ts|choice:yes|nonce:1",
+      "signature": "smpAkcwRAIgC1NE6Bzk4YjZuY1XnRDmzb45JCoUkyCafsDx2QE3xoECIBR3ucUMVUyKnYCCGABc46Ewqm09R6c9RP4H+isL4maYASEDPedH2COnb8QOnD+HuJE268uAv1zl3Tx4uCqxVAleVm0="
+    },
+    {
+      "address": "bc1qkxcttfatezn8lxk74yv38pzvqnjenslma4pwjy",
+      "choice": "no",
+      "nonce": 1,
+      "timestamp": 1760086400,
+      "message": "proposal:prop-boundary-ts|choice:no|nonce:1",
+      "signature": "smpAkgwRQIhANdUJRy9YpOTiq6humhSCKeyIPlNDo9cyMyd5eQzKplYAiA7q96XLaOUAxmlasM3obyhArMJ0ptHM+ZZrEmncz6nlwEhA3TY3577DLrsePhPbffy2q035RDI9HvBifNjjiH1A4LM"
+    }
+  ],
+  "policy": {
+    "quorum_bps": 5000,
+    "pass_threshold_bps": 5001
+  }
+}

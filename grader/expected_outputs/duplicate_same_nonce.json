@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "proposal_id": "prop-duplicate-nonce",
+  "network": "mainnet",
+  "totals": {
+    "snapshot_power": 200,
+    "participating_power": 200,
+    "yes_power": 100,
+    "no_power": 100
+  },
+  "quorum_reached": true,
+  "passed": false,
+  "counted_votes": 2,
+  "rejected_votes": [
+    {
+      "code": "DUPLICATE_VOTE",
+      "address": "bc1qqa7c02ut2fky07jt0627erz4jf8lgj48qhseq0"
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,261 @@
+Chain Secretary (BIP-322 Edition)
+
+Build a BIP-322 vote verifier and tally engine
+
+
+
+Problem statement
+
+Given a fixture (member snapshot, proposal window, vote messages, and BIP-322 signatures), produce:
+
+1. verified and counted votes,
+2. quorum + pass/fail result,
+3. machine-checkable JSON report.
+
+This models a real workflow: members sign votes with wallets, secretary verifies signatures and publishes final tally.
+
+---
+
+Getting started
+
+Run one fixture through the CLI:
+
+
+./cli.sh fixtures/basic_vote.json
+# Output is written to out/basic_vote.json
+
+Suggested libraries (use anything equivalent):
+
+- JS/TS: bitcoinjs-lib + secp256k1 libs
+- Python: python-bitcointx / bitcoinlib / btclib
+- Rust: rust-bitcoin + secp256k1
+
+
+
+Solution requirements
+
+Must ship
+
+1. CLI evaluator via:
+
+
+./cli.sh <fixture.json>
+
+2. JSON output in out/<fixture_name>.json
+3. At least 15 unit tests (signature verification, duplicate handling, quorum rules)
+4. Demo video link in demo.md at repository root
+
+Core expectations
+
+- Validate fixture structure and fields
+- Verify BIP-322 signatures for each vote
+- Enforce vote window + duplicate/replay policy
+- Compute deterministic tally + pass/fail decision
+- Emit clear warning/error codes
+
+
+
+Required repo interface
+
+1) `cli.sh <fixture.json>`
+
+- Reads fixture file
+- Runs evaluator
+- Writes one JSON output file to `out/`
+- Creates `out/` if missing
+- Logs (if any) go to stderr
+- Exit codes:
+  - `0` on success
+  - `1` on invalid fixture / processing error
+
+
+
+Fixture input format
+
+
+{
+  "network": "mainnet",
+  "proposal": {
+    "proposal_id": "prop-001",
+    "title": "Approve Event Budget",
+    "start_ts": 1760000000,
+    "end_ts": 1760086400
+  },
+  "members": [
+    {
+      "address": "bc1q...",
+      "voting_power": 100
+    }
+  ],
+  "votes": [
+    {
+      "address": "bc1q...",
+      "choice": "yes",
+      "nonce": 1,
+      "timestamp": 1760000100,
+      "message": "proposal:prop-001|choice:yes|nonce:1",
+      "signature": "base64_or_hex_signature"
+    }
+  ],
+  "policy": {
+    "quorum_bps": 2000,
+    "pass_threshold_bps": 5001
+  }
+}
+
+Notes:
+
+- `members` is the authoritative voting snapshot.
+- Signature verification must follow BIP-322 rules.
+- `votes` may contain invalid signatures, duplicates, or stale nonces.
+- Extra unknown fields may be ignored.
+
+
+
+Voting rules (minimum)
+
+- Authenticity: vote signature must verify for `address` and `message` under BIP-322.
+- Eligibility: voter address must exist in `members`.
+- Replay protection: Filter out invalid signatures first. Then, for the same address, keep only the vote with the highest valid nonce. 
+- Vote window: count votes only if `start_ts <= timestamp <= end_ts`.
+- Choice set: only `yes` and `no` are required.
+- Quorum: `(yes_power + no_power) *10000/ total_snapshot_power >= quorum_bps`.
+- Pass rule: (yes_power * 10000) / (yes_power + no_power) >= pass_threshold_bps 
+- Determinism: same fixture must always produce the same result.
+
+
+
+CLI output format
+
+Write one JSON object:
+
+
+{
+  "ok": true,
+  "proposal_id": "prop-001",
+  "network": "mainnet",
+  "totals": {
+    "snapshot_power": 1000,
+    "participating_power": 740,
+    "yes_power": 520,
+    "no_power": 220
+  },
+  "quorum_reached": true,
+  "passed": true,
+  "counted_votes": 12,
+  "rejected_votes": [
+    { "code": "INVALID_SIGNATURE", "address": "bc1q..." }
+  ],
+  "warnings": [
+    { "code": "LOW_PARTICIPATION" }
+  ]
+}
+
+Field requirements:
+
+- `counted_votes` + rejected vote count must equal input vote count.
+- `totals.participating_power = yes_power + no_power`.
+
+Error output
+
+On fatal error:
+
+
+{ "ok": false, "error" : { "code": "INVALID_FIXTURE", "message": "..." } }
+
+`error.code` and `error.message` must be non-empty strings.
+
+All arrays in the JSON output (e.g., rejected_votes, warnings) must be sorted alphabetically by address or code to guarantee strict determinism. 
+
+
+
+Required warning/error codes
+
+Emit when applicable:
+
+- `INVALID_SIGNATURE`
+- `DUPLICATE_VOTE`
+- `REPLAY_ATTEMPT`
+- `OUTSIDE_VOTING_WINDOW`
+- `UNKNOWN_MEMBER`
+- `LOW_PARTICIPATION`
+
+(You may add more.)
+
+
+
+Hidden fixture categories
+
+- Valid and invalid BIP-322 signatures mixed
+- Duplicate votes with different nonces
+- Replay attempts (same or lower nonce)
+- Boundary timestamps at start/end
+- Quorum boundary (just below/above threshold)
+- Pass-threshold boundary (50.00% vs 50.01%)
+- Unknown-member votes
+
+
+
+Acceptance criteria
+
+- `cli.sh` works on provided fixtures
+- Output JSON shape is correct and deterministic
+- BIP-322 signature verification is correctly enforced
+- Replay/duplicate/window handling is correct
+- Quorum and pass/fail logic are correct
+- Tests pass in your grading flow
+- Demo link exists in `demo.md` (root, only link)
+
+
+
+Demo video requirement (mandatory)
+
+- **Where:** YouTube, Loom, or Google Drive (public/unlisted)
+- **Length:** strictly **under 3 minutes**
+- **Style:** simple product + protocol explanation (not code scrolling)
+
+Must demonstrate
+
+1. Run one fixture via CLI
+2. Show counted votes vs rejected votes
+3. Explain one BIP-322 signature verification case
+4. Explain quorum and final pass/fail output
+5. Show one failure case (invalid signature or replay)
+
+
+
+Stretch goals (optional)
+
+- Support `abstain`
+- Add richer vote message schema validation
+- Export per-address verification trace
+- Add performance benchmarks for large vote sets
+
+
+
+Evaluation criteria
+
+Phase 1: Automated
+
+- CLI correctness on public fixtures
+- Output format and deterministic behavior
+- Error handling quality
+
+Phase 2: Manual
+
+- Hidden fixture robustness
+- Security and edge-case handling
+- Code quality and clarity
+- Demo explanation quality
+
+
+
+Plagiarism policy
+
+- Submissions must be original work.
+- AI tools are allowed, but participants must explain their implementation.
+- Similarity checks may be performed.
+
+
+
+

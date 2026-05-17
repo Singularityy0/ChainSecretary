@@ -1,0 +1,85 @@
+{
+  "network": "mainnet",
+  "proposal": {
+    "proposal_id": "prop-mixed",
+    "title": "Approve Speaker Honorarium",
+    "start_ts": 1760000000,
+    "end_ts": 1760086400
+  },
+  "members": [
+    {
+      "address": "bc1q5utl9rrv9j80afv9l239csalh4f6shjxn2ssvr",
+      "voting_power": 100
+    },
+    {
+      "address": "bc1qltgj637xk2n7cxcdgj9p7ewly5elqwj6dk099c",
+      "voting_power": 100
+    },
+    {
+      "address": "bc1q8c6l8myuqhttpu8t3rphfrlwuckcu8l3myju03",
+      "voting_power": 100
+    }
+  ],
+  "votes": [
+    {
+      "address": "bc1q5utl9rrv9j80afv9l239csalh4f6shjxn2ssvr",
+      "choice": "yes",
+      "nonce": 1,
+      "timestamp": 1760000100,
+      "message": "proposal:prop-mixed|choice:yes|nonce:1",
+      "signature": "smpAkcwRAIgN6x08B2wUtFaVua+6ghLZ9074DyCAECpzA9eg84RrHACICyUT6FrJvRHQlA4qP91NXH/nkqI40VXMKWL/q7zpqg/ASEDZSTjPYnZaWJPtQmFfQqTaPp9dQPaKB7Q8rGYGis9+Y4="
+    },
+    {
+      "address": "bc1q5utl9rrv9j80afv9l239csalh4f6shjxn2ssvr",
+      "choice": "yes",
+      "nonce": 1,
+      "timestamp": 1760000200,
+      "message": "proposal:prop-mixed|choice:yes|nonce:1",
+      "signature": "smpAkcwRAIgN6x08B2wUtFaVua+6ghLZ9074DyCAECpzA9eg84RrHACICyUT6FrJvRHQlA4qP91NXH/nkqI40VXMKWL/q7zpqg/ASEDZSTjPYnZaWJPtQmFfQqTaPp9dQPaKB7Q8rGYGis9+Y4="
+    },
+    {
+      "address": "bc1q5utl9rrv9j80afv9l239csalh4f6shjxn2ssvr",
+      "choice": "yes",
+      "nonce": 0,
+      "timestamp": 1760000300,
+      "message": "proposal:prop-mixed|choice:yes|nonce:0",
+      "signature": "smpAkcwRAIgbyJkpOjqtG4yAxj8Vh/2ZW7sqt45FBXYXKiiKMkRqZgCIFBvg1mrk/ZL1dskZBcWSSADCRJDu3GNKpbICW4hvcruASEDZSTjPYnZaWJPtQmFfQqTaPp9dQPaKB7Q8rGYGis9+Y4="
+    },
+    {
+      "address": "bc1qltgj637xk2n7cxcdgj9p7ewly5elqwj6dk099c",
+      "choice": "yes",
+      "nonce": 1,
+      "timestamp": 1760000400,
+      "message": "proposal:prop-mixed|choice:yes|nonce:1",
+      "signature": "invalid_sig_b"
+    },
+    {
+      "address": "bc1qtht72tqn7fvunape74u27cvlmgxcsd9aunlv34",
+      "choice": "yes",
+      "nonce": 1,
+      "timestamp": 1760000500,
+      "message": "proposal:prop-mixed|choice:yes|nonce:1",
+      "signature": "smpAkcwRAIgXorlIEWsbneAc9m7qsFRwNiGp+BPMHvmwbreCpydyyACIEbu954CMYKR9WX/lEnwONC+JoFad6L5l3RZHx0p0XqhASECn+hRqdPeb4FWZymjv43TX6Rg0ZZuY0RsoZrI7rV/bqg="
+    },
+    {
+      "address": "bc1q8c6l8myuqhttpu8t3rphfrlwuckcu8l3myju03",
+      "choice": "no",
+      "nonce": 1,
+      "timestamp": 1760000600,
+      "message": "proposal:prop-mixed|choice:no|nonce:1",
+      "signature": "smpAkcwRAIgGcSG6RGsjDZuzf9ml4YZCaylH9iHGj+nveDz4QY19XICIH8bEkrIlTQr6F0/TpiwaL7TSZ5hxPMC+mLJ7/ytvWjPASED9WOmjAuLuH3mTgl0glma2kNSQG4DzRpMuFVBt7UHhmg="
+    },
+    {
+      "address": "bc1qltgj637xk2n7cxcdgj9p7ewly5elqwj6dk099c",
+      "choice": "no",
+      "nonce": 2,
+      "timestamp": 1760186400,
+      "message": "proposal:prop-mixed|choice:no|nonce:2",
+      "signature": "smpAkcwRAIgfX6UTig4bt9Y9n5EsP2WIF896O99odUPO0rHSOqb3wgCIGMaoLuSOd7oSX+td1EpcTB35nE+4C2Di8Wavw6gp/TlASEDsE4lII4rCn4DVLvEM598lOSkxPqK20MYGSD0if6CL0Q="
+    }
+  ],
+  "policy": {
+    "quorum_bps": 4000,
+    "pass_threshold_bps": 5001
+  }
+}

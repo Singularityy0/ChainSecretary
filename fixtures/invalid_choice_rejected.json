@@ -1,0 +1,41 @@
+{
+  "network": "mainnet",
+  "proposal": {
+    "proposal_id": "prop-invalid-choice",
+    "title": "Invalid Choice Rejected",
+    "start_ts": 1760000000,
+    "end_ts": 1760086400
+  },
+  "members": [
+    {
+      "address": "bc1qfwyfpu4pk7aaq6vwj2jdaagtn0fuc6yc9966fx",
+      "voting_power": 100
+    },
+    {
+      "address": "bc1qa7w7ql5cv68ne0v0g77qxngqxm55l4ze08yctu",
+      "voting_power": 100
+    }
+  ],
+  "votes": [
+    {
+      "address": "bc1qfwyfpu4pk7aaq6vwj2jdaagtn0fuc6yc9966fx",
+      "choice": "maybe",
+      "nonce": 1,
+      "timestamp": 1760000100,
+      "message": "proposal:prop-invalid-choice|choice:maybe|nonce:1",
+      "signature": "smpAkcwRAIgYuTuemD7Lz4VNb6/eF1Noj1YQB1+QStJL7RpT3gOAjACIHs4It8Cv1nyZBr5EzSuABtuI3FToZONEGmJSlufqZhsASECmfoLRQgmmPOnBTtirCVO4ZGNtH79TWtvoOgj5GTJEaw="
+    },
+    {
+      "address": "bc1qa7w7ql5cv68ne0v0g77qxngqxm55l4ze08yctu",
+      "choice": "yes",
+      "nonce": 1,
+      "timestamp": 1760000200,
+      "message": "proposal:prop-invalid-choice|choice:yes|nonce:1",
+      "signature": "smpAkgwRQIhAI7QSYyfIkm9hU/5dnuDf9aJsRnDz86HZmfmIbf6R14CAiAxvmP56CTyOAD6ju9gTRCaFP0HfPWg6RiR6WOSfsumqQEhAssQtGoXaqbE7Ok3Sj/63BfpoPbueIy9jnt8sENS/dML"
+    }
+  ],
+  "policy": {
+    "quorum_bps": 5000,
+    "pass_threshold_bps": 5001
+  }
+}

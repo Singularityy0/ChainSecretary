@@ -1,0 +1,49 @@
+{
+  "network": "mainnet",
+  "proposal": {
+    "proposal_id": "prop-duplicate-nonce",
+    "title": "Duplicate Same Nonce",
+    "start_ts": 1760000000,
+    "end_ts": 1760086400
+  },
+  "members": [
+    {
+      "address": "bc1qqa7c02ut2fky07jt0627erz4jf8lgj48qhseq0",
+      "voting_power": 100
+    },
+    {
+      "address": "bc1qenfzf3t0k0w9ps2c9zhtt700rk2akpxzazdvvn",
+      "voting_power": 100
+    }
+  ],
+  "votes": [
+    {
+      "address": "bc1qqa7c02ut2fky07jt0627erz4jf8lgj48qhseq0",
+      "choice": "yes",
+      "nonce": 5,
+      "timestamp": 1760000100,
+      "message": "proposal:prop-duplicate-nonce|choice:yes|nonce:5",
+      "signature": "smpAkgwRQIhAMGFHZGVogWYLaW7rx/9AQ90A+DlNhMSkDeTdcfdAcN9AiAI11oZ/O7qeToO/KkAQdBbEwjKXqIYiolkOLaU9K3DXQEhA6OqIEBkut31wblcorqW9XZROFN2ixLr6rON//yGVDsQ"
+    },
+    {
+      "address": "bc1qqa7c02ut2fky07jt0627erz4jf8lgj48qhseq0",
+      "choice": "yes",
+      "nonce": 5,
+      "timestamp": 1760000200,
+      "message": "proposal:prop-duplicate-nonce|choice:yes|nonce:5",
+      "signature": "smpAkgwRQIhAMGFHZGVogWYLaW7rx/9AQ90A+DlNhMSkDeTdcfdAcN9AiAI11oZ/O7qeToO/KkAQdBbEwjKXqIYiolkOLaU9K3DXQEhA6OqIEBkut31wblcorqW9XZROFN2ixLr6rON//yGVDsQ"
+    },
+    {
+      "address": "bc1qenfzf3t0k0w9ps2c9zhtt700rk2akpxzazdvvn",
+      "choice": "no",
+      "nonce": 1,
+      "timestamp": 1760000300,
+      "message": "proposal:prop-duplicate-nonce|choice:no|nonce:1",
+      "signature": "smpAkcwRAIgXoFYCyIW1Bt8iCtobBC8vzFsiqQzOUDE1FKCuzVKw8ICICfVnWTFo08mZIVS5t0VbzcUQ16Bhb1zp6CDlRly9HA+ASEDm+HECIu/4xSuwN8PmF2wdzztj0sERgE5d/JhbWe2gek="
+    }
+  ],
+  "policy": {
+    "quorum_bps": 5000,
+    "pass_threshold_bps": 5001
+  }
+}

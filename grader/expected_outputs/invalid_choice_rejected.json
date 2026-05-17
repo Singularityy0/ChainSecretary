@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "proposal_id": "prop-invalid-choice",
+  "network": "mainnet",
+  "totals": {
+    "snapshot_power": 200,
+    "participating_power": 100,
+    "yes_power": 100,
+    "no_power": 0
+  },
+  "quorum_reached": true,
+  "passed": true,
+  "counted_votes": 1,
+  "rejected_votes": [
+    {
+      "code": "INVALID_CHOICE",
+      "address": "bc1qfwyfpu4pk7aaq6vwj2jdaagtn0fuc6yc9966fx"
+    }
+  ],
+  "warnings": []
+}

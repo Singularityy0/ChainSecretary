@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "proposal_id": "prop-bip322-format-1",
+  "network": "mainnet",
+  "totals": {
+    "snapshot_power": 100,
+    "participating_power": 0,
+    "yes_power": 0,
+    "no_power": 0
+  },
+  "quorum_reached": false,
+  "passed": false,
+  "counted_votes": 0,
+  "rejected_votes": [
+    {
+      "code": "INVALID_SIGNATURE",
+      "address": "bc1q5ucaplh9r83ualu76sr32v43wx22rkqzs6cr9p"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "LOW_PARTICIPATION"
+    }
+  ]
+}

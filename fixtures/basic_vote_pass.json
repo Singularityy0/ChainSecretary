@@ -1,0 +1,53 @@
+{
+  "network": "mainnet",
+  "proposal": {
+    "proposal_id": "prop-basic-pass",
+    "title": "Approve Workshop Budget",
+    "start_ts": 1760000000,
+    "end_ts": 1760086400
+  },
+  "members": [
+    {
+      "address": "bc1qw8e20a34eqm84s62jnm6r7a27qux8ywpgv6twc",
+      "voting_power": 100
+    },
+    {
+      "address": "bc1qn2rdtyuvz3s82ta934sl35zj76kx47js0ycaa5",
+      "voting_power": 60
+    },
+    {
+      "address": "bc1qzxya6ku08hq469gq4kk2pm0uzdkdt0easdds7t",
+      "voting_power": 40
+    }
+  ],
+  "votes": [
+    {
+      "address": "bc1qw8e20a34eqm84s62jnm6r7a27qux8ywpgv6twc",
+      "choice": "yes",
+      "nonce": 1,
+      "timestamp": 1760000100,
+      "message": "proposal:prop-basic-pass|choice:yes|nonce:1",
+      "signature": "smpAkcwRAIgRVGaNo4jfqyGpy95HosQvisD7UYEo9co4IKvkovy0WACICyzTqyYS+aBjfuCYP/Do8ewguL8jfh4VTlgz35/YGgWASEDr+qPETNfuz5cpAkbRmvKZ1+h+0krijIOUtefJg901wU="
+    },
+    {
+      "address": "bc1qn2rdtyuvz3s82ta934sl35zj76kx47js0ycaa5",
+      "choice": "yes",
+      "nonce": 1,
+      "timestamp": 1760000200,
+      "message": "proposal:prop-basic-pass|choice:yes|nonce:1",
+      "signature": "smpAkcwRAIgAnS6e9v7mwwl8w9pCKq9s/a3O0au8AXjU8bA6TKuVd8CIGf/osSXSlUh/1yfoPAy/ZQRUe8jlKvAjE02gspysW0+ASECVVK4R6LRElir1UHBQlvnaT3brIjnbaNZmb21UXwob+M="
+    },
+    {
+      "address": "bc1qzxya6ku08hq469gq4kk2pm0uzdkdt0easdds7t",
+      "choice": "no",
+      "nonce": 1,
+      "timestamp": 1760000300,
+      "message": "proposal:prop-basic-pass|choice:no|nonce:1",
+      "signature": "smpAkcwRAIgPLdhOyCujtIno7nhj64iX7FMYB5Mz0kPvv9RRlBMdFcCIDgbezHrWAKhGPB5KHiusm2HKa82na3QIGnW83rTDSilASECj3CNIYhQSfScV7omWdfLrFLC35yu26mQkAO2i6tsunY="
+    }
+  ],
+  "policy": {
+    "quorum_bps": 5000,
+    "pass_threshold_bps": 6000
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "network": "mainnet",
+  "proposal": {
+    "proposal_id": "prop-quorum-fail",
+    "title": "Approve Meetup Snacks",
+    "start_ts": 1760000000,
+    "end_ts": 1760086400
+  },
+  "members": [
+    {
+      "address": "bc1qw6ak5r4wydjvt8jncpgrreqksa8vfcmmzkth3l",
+      "voting_power": 100
+    },
+    {
+      "address": "bc1q4ghhtmen2rz0qawhucdv3lej5e4qhayjehm3fe",
+      "voting_power": 100
+    }
+  ],
+  "votes": [
+    {
+      "address": "bc1qw6ak5r4wydjvt8jncpgrreqksa8vfcmmzkth3l",
+      "choice": "yes",
+      "nonce": 1,
+      "timestamp": 1760000100,
+      "message": "proposal:prop-quorum-fail|choice:yes|nonce:1",
+      "signature": "smpAkgwRQIhAMvT7aA322rN6kS9y3/Yq0X9me1JKDrICLyJAYQUTDfGAiBnG69R50O6rkyuelU5k+VWhbDc0wDpV/xfjreWZoOnPwEhAs4PKlqhWfy+oi2JwNDGLozWgM3fH+bAvaSo3udtn1Du"
+    }
+  ],
+  "policy": {
+    "quorum_bps": 6000,
+    "pass_threshold_bps": 5001
+  }
+}

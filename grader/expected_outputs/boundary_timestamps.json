@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "proposal_id": "prop-boundary-ts",
+  "network": "mainnet",
+  "totals": {
+    "snapshot_power": 300,
+    "participating_power": 200,
+    "yes_power": 100,
+    "no_power": 100
+  },
+  "quorum_reached": true,
+  "passed": false,
+  "counted_votes": 2,
+  "rejected_votes": [],
+  "warnings": []
+}

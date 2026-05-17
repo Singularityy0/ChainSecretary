@@ -1,0 +1,29 @@
+{
+  "network": "mainnet",
+  "proposal": {
+    "proposal_id": "prop-bip322-format-1",
+    "title": "Missing Signature Prefix",
+    "start_ts": 1760000000,
+    "end_ts": 1760086400
+  },
+  "members": [
+    {
+      "address": "bc1q5ucaplh9r83ualu76sr32v43wx22rkqzs6cr9p",
+      "voting_power": 100
+    }
+  ],
+  "votes": [
+    {
+      "address": "bc1q5ucaplh9r83ualu76sr32v43wx22rkqzs6cr9p",
+      "choice": "yes",
+      "nonce": 1,
+      "timestamp": 1760000100,
+      "message": "proposal:prop-bip322-format-1|choice:yes|nonce:1",
+      "signature": "valid_like_string_without_variant_prefix"
+    }
+  ],
+  "policy": {
+    "quorum_bps": 5000,
+    "pass_threshold_bps": 5001
+  }
+}

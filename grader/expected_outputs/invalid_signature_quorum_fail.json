@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "proposal_id": "prop-invalid-sig",
+  "network": "mainnet",
+  "totals": {
+    "snapshot_power": 1000,
+    "participating_power": 250,
+    "yes_power": 250,
+    "no_power": 0
+  },
+  "quorum_reached": false,
+  "passed": false,
+  "counted_votes": 1,
+  "rejected_votes": [
+    {
+      "code": "INVALID_SIGNATURE",
+      "address": "bc1qk44xym79cqc8t48lt75nnqtnn63thfnm0vpwkj"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "LOW_PARTICIPATION"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "proposal_id": "prop-replay-low",
+  "network": "mainnet",
+  "totals": {
+    "snapshot_power": 200,
+    "participating_power": 200,
+    "yes_power": 200,
+    "no_power": 0
+  },
+  "quorum_reached": true,
+  "passed": true,
+  "counted_votes": 2,
+  "rejected_votes": [
+    {
+      "code": "REPLAY_ATTEMPT",
+      "address": "bc1qfzhdh4q57npmhle2py53yhfwdeyy9gxv8q08q8"
+    }
+  ],
+  "warnings": []
+}

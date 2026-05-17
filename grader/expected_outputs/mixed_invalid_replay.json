@@ -1,0 +1,37 @@
+{
+  "ok": true,
+  "proposal_id": "prop-mixed",
+  "network": "mainnet",
+  "totals": {
+    "snapshot_power": 300,
+    "participating_power": 200,
+    "yes_power": 100,
+    "no_power": 100
+  },
+  "quorum_reached": true,
+  "passed": false,
+  "counted_votes": 2,
+  "rejected_votes": [
+    {
+      "code": "DUPLICATE_VOTE",
+      "address": "bc1q5utl9rrv9j80afv9l239csalh4f6shjxn2ssvr"
+    },
+    {
+      "code": "REPLAY_ATTEMPT",
+      "address": "bc1q5utl9rrv9j80afv9l239csalh4f6shjxn2ssvr"
+    },
+    {
+      "code": "INVALID_SIGNATURE",
+      "address": "bc1qltgj637xk2n7cxcdgj9p7ewly5elqwj6dk099c"
+    },
+    {
+      "code": "OUTSIDE_VOTING_WINDOW",
+      "address": "bc1qltgj637xk2n7cxcdgj9p7ewly5elqwj6dk099c"
+    },
+    {
+      "code": "UNKNOWN_MEMBER",
+      "address": "bc1qtht72tqn7fvunape74u27cvlmgxcsd9aunlv34"
+    }
+  ],
+  "warnings": []
+}
