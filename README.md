@@ -14,8 +14,7 @@ You must implement a CLI-based evaluation engine that parses a JSON fixture file
 To ensure fair grading, **YOU ARE STRICTLY NOT ALLOWED TO EDIT** the following files and directories:
 - `fixtures/` (Contains all the test cases)
 - `grader/` (Contains the evaluation script)
-- `expected_outputs/` (The exact JSONs your program must produce)
-- `task.txt` (The original raw requirements)
+- `expected_outputs/` (The exact JSONs your program must produce).
 
 You must only edit the files within your chosen language's directory (e.g., `rust/`, `python/`) and update `cli.sh` to correctly invoke your code. You must also create `demo.md` at the root of the repository.
 
