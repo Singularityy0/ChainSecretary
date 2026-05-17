@@ -1,4 +1,3 @@
-fn main() {
-
-    // Your code here
+fn main(){
+    // your code here
 }

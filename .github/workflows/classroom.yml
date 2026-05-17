@@ -1,0 +1,41 @@
+name: Autograding Tests
+'on':
+  - push
+  - repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup test dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y jq
+        
+    - name: Ensure CLI is executable
+      run: chmod +x cli.sh grader/grade.sh
+        
+    - name: Run Grade Script
+      id: grade-script
+      run: |
+        if ./grader/grade.sh; then
+          echo "passed=true" >> $GITHUB_OUTPUT
+        else
+          echo "passed=false" >> $GITHUB_OUTPUT
+          exit 1
+        fi
+      continue-on-error: true
+
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        GRADE_SCRIPT_RESULTS: "${{steps.grade-script.outputs.passed}}"
+      with:
+        runners: grade-script
