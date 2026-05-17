@@ -18,24 +18,57 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y jq
+
+    - name: Fetch Hidden Fixtures (Private Repo)
+      uses: actions/checkout@v4
+      continue-on-error: true # Prevents workflow from crashing if the secret isn't set up yet
+      with:
+        repository: 'YOUR-ORGANIZATION/ChainSecretary-Hidden' # REPLACE THIS
+        token: ${{ secrets.HIDDEN_FIXTURES_PAT }}
+        path: 'hidden_repo'
         
-    - name: Ensure CLI is executable
-      run: chmod +x cli.sh grader/grade.sh
+    - name: Merge Hidden Fixtures
+      run: |
+        if [ -d "hidden_repo" ]; then
+          echo "Merging hidden fixtures into grading pipeline..."
+          cp hidden_repo/fixtures/*.json fixtures/ || true
+          cp hidden_repo/expected_outputs/*.json grader/expected_outputs/ || true
+          rm -rf hidden_repo
+        else
+          echo "No hidden repo found or PAT missing. Running public fixtures only."
+        fi
+
+    - name: Run Candidate Setup (Install Dependencies)
+      run: |
+        chmod +x setup.sh
+        ./setup.sh
         
-    - name: Run Grade Script
-      id: grade-script
+    - name: Ensure Scripts are executable
+      run: chmod +x cli.sh grader/grade.sh test.sh
+        
+    - name: Run Output Evaluator (grade.sh)
+      id: run-grader
       run: |
         if ./grader/grade.sh; then
           echo "passed=true" >> $GITHUB_OUTPUT
         else
           echo "passed=false" >> $GITHUB_OUTPUT
-          exit 1
         fi
-      continue-on-error: true
+
+    - name: Run Strict Unit Tests (test.sh)
+      id: run-strict-tests
+      run: |
+        if ./test.sh; then
+          echo "passed=true" >> $GITHUB_OUTPUT
+        else
+          echo "passed=false" >> $GITHUB_OUTPUT
+        fi
 
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        GRADE_SCRIPT_RESULTS: "${{steps.grade-script.outputs.passed}}"
+        RUN_GRADER_RESULTS: "${{steps.run-grader.outputs.passed}}"
+        RUN_STRICT_TESTS_RESULTS: "${{steps.run-strict-tests.outputs.passed}}"
       with:
-        runners: grade-script
+        runners: run-grader,run-strict-tests
+
