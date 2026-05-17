@@ -35,9 +35,4 @@ jobs:
           exit 1
         fi
       continue-on-error: true
-    - name: Autograding Reporter
-      uses: classroom-resources/autograding-grading-reporter@v1
-      env:
-        AUTOGRADER_RESULTS: "${{steps.autograder.outputs.passed}}"
-      with:
-        runners: autograder
+    
